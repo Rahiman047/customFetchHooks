@@ -10,7 +10,7 @@ function App() {
     <div>
       {loading && <h1>Please wait while we fetch the user</h1>}
       {error && <h1>Oops Something went wrong</h1>}
-      <ShowUser data={data} />
+      {!error && <ShowUser data={data} />}
     </div>
   );
 }

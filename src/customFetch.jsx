@@ -4,20 +4,26 @@ import axios from "axios";
 
 const customFetch = (url) => {
   const [data, setUserData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const fetchData = async () => {
-    setLoading(false);
-    const resData = await axios.get(url);
-    const resStatus = await resData.status;
-    const userData = await resData.data;
+    setLoading(true);
+    try {
+      const resData = await axios.get(url);
+      const userData = await resData.data;
+      const resStatus = await resData.status;
 
-    if (resStatus == 200) {
-      setError(false);
-      setUserData(userData);
+      if (resStatus == 200) {
+        setError(false);
+        setUserData(userData);
+      } else {
+        setError(true);
+      }
+    } catch (error) {
+      setError(true);
     }
-    setError(true);
+    setLoading(false);
   };
 
   useEffect(() => {
