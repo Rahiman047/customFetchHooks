@@ -1,0 +1,31 @@
+.avatar-img {
+  height: 220px;
+  border-radius: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.user-name {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.user-company {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.user-company:hover {
+  transform: scale(1.5);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.user-followers: {
+  font-size: 15px;
+  font-weight: bold;
+}
